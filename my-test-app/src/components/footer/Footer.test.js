@@ -9,4 +9,6 @@ it('Should render phone number', () => {
     const result = span.text();
 
     expect(result).toBe('Customer service:  +395 898 000 555');
+    // expect(span.text()).toBe('Customer service:  +395 898 000 555');
+    // expect(result).toContain('Customer service:  +395 898 000 555')
 })

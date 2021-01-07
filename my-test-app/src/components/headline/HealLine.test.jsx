@@ -4,20 +4,26 @@ import { shallow } from 'enzyme';
 import HeadLine from './HeadLine';
 import { findByAttr } from '../../utils/arrt';
 
-const setUp = (props = {}) => {
-    const component = shallow(<HeadLine {...props} />);
-    return component;
-}
+// const setUp = (props = {}) => {
+//     const component = shallow(<HeadLine {...props} />);
+//     return component;
+// }
 describe('Headline component', () => {
 
     describe('Have props', () => {
         let wrapper;
         beforeEach(() => {
-            const props = {
-                header: 'Test header',
-                description: 'asd'
-            };
-            wrapper = setUp(props)
+            wrapper = shallow(
+                <HeadLine
+                    header="Test header"
+                    description="asda"
+                />
+            );
+            // const props = {
+            //     header: 'Test header',
+            //     description: 'asd'
+            // };
+            // wrapper = setUp(props)
         })
 
         it('Should render without errors', () => {
@@ -29,6 +35,14 @@ describe('Headline component', () => {
             const component = findByAttr(wrapper, 'header');
             expect(component.length).toBe(1);
         })
+
+        it('Shuld show  text when the btn is clicked', () => {
+
+            const button = findByAttr(wrapper, 'btn');
+            button.simulate('click');
+            const textInfo = findByAttr(wrapper, 'text-info');
+            expect(textInfo.length).toBe(1);
+        })
     })
 
 
@@ -37,7 +51,8 @@ describe('Headline component', () => {
     describe('Have NO props', () => {
         let wrapper;
         beforeEach(() => {
-            wrapper = setUp() // !! whitout props
+            //  wrapper = setUp() // !! whitout props
+            wrapper = shallow(<HeadLine />);
         })
         it('Should not render', () => {
             const component = findByAttr(wrapper, 'header-line');
@@ -45,4 +60,6 @@ describe('Headline component', () => {
         })
 
     })
+
+
 })
