@@ -1,9 +1,7 @@
 import { FETCH_POSTS } from './types';
 
 export const fetchPosts = () => dispatch => {
-
     fetch('https://jsonplaceholder.typicode.com/posts')
-    console.log('ff')
         .then(res => res.json())
         .then(posts =>
             dispatch({
@@ -12,3 +10,14 @@ export const fetchPosts = () => dispatch => {
             }))
 
 }
+// export function fetchPosts() {
+//     return function (dispatch) {
+//         fetch('https://jsonplaceholder.typicode.com/posts')
+//             .then(res => res.json())
+//             .then(posts =>
+//                 dispatch({
+//                     type: FETCH_POSTS,
+//                     payload: posts,
+//                 }))
+//     }
+// }

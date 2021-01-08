@@ -3,13 +3,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../../actions/postAction';
 
-type Props = {
+type Props = {}
 
-}
-
-type State = {
-
-}
+type State = {}
 
 class Posts extends React.Component<Props, State> {
     constructor(props: Props) {
@@ -24,10 +20,12 @@ class Posts extends React.Component<Props, State> {
     //         .then(data => this.setState({ posts: data }))
 
     // }
-    componentWillUnmount() {
+    componentWillMount() {
         this.props.fetchPosts();
     }
+
     render() {
+        console.log(this.props.posts);
         const postItems = this.props.posts.map(post => (
             <div key={post.id}>
                 {post.title}
@@ -45,8 +43,5 @@ class Posts extends React.Component<Props, State> {
 
 const mapStateToProps = state => ({ posts: state.posts.items });
 
-export default connect(
-    mapStateToProps,
-    { fetchPosts },
-)(Posts);
+export default connect(mapStateToProps, { fetchPosts })(Posts);
 
