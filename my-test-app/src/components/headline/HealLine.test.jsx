@@ -36,13 +36,13 @@ describe('Headline component', () => {
             expect(component.length).toBe(1);
         })
 
-        it('Shuld show  text when the btn is clicked', () => {
+        // it('Shuld show  text when the btn is clicked', () => {
 
-            const button = findByAttr(wrapper, 'btn');
-            button.simulate('click');
-            const textInfo = findByAttr(wrapper, 'text-info');
-            expect(textInfo.length).toBe(1);
-        })
+        //     const button = findByAttr(wrapper, 'btn');
+        //     button.simulate('click');
+        //     const textInfo = findByAttr(wrapper, 'text-info');
+        //     expect(textInfo.length).toBe(1);
+        // })
     })
 
 
@@ -56,7 +56,9 @@ describe('Headline component', () => {
         })
         it('Should not render', () => {
             const component = findByAttr(wrapper, 'header-line');
-            expect(component.length).toBe(0);
+            expect(component.length).toBe(0); //.toBeTruthy();
+
+            //има шест фалшиви стойности: false, 0, '', null, undefined и NaN. Всичко останало е истинско.
         })
 
     })

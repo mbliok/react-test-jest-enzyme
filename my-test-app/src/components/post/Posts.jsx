@@ -19,14 +19,21 @@ class Posts extends React.Component<Props, State> {
 
     render() {
         const postItems = this.props.posts.map(post => (
-            <div key={post.id}>
-                {post.title}
-                <p>  {post.body}</p>
-            </div>
+            <article key={post.id} className="list-item">
+                <div className="list-content">
+                    {post.id}
+                    <h2>{post.title}</h2>
+
+                    <p>{post.body}</p>
+                </div>
+            </article>
         ))
         return (
-            <div data-test="post">
-                {postItems}
+            <div>
+                <h1>Test page</h1>
+                <div data-test="post" className="list">
+                    {postItems}
+                </div>
             </div>
         )
     }
