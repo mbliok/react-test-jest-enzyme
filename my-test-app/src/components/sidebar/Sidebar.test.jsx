@@ -1,27 +1,27 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import HeadLine from './HeadLine';
+import Sidebar from './Sidebar';
 import { findByAttr } from '../../utils/arrt';
 
 // const setUp = (props = {}) => {
-//     const component = shallow(<HeadLine {...props} />);
+//     const component = shallow(<Sidebar {...props} />);
 //     return component;
 // }
-describe('Headline component', () => {
+describe('Sidebar component', () => {
 
     describe('Have props', () => {
         let wrapper;
         beforeEach(() => {
             wrapper = shallow(
-                <HeadLine
+                <Sidebar
                     header="Test header"
-                    description="asda"
+                    price="asda"
                 />
             );
             // const props = {
             //     header: 'Test header',
-            //     description: 'asd'
+            //     price: 'asd'
             // };
             // wrapper = setUp(props)
         })
@@ -52,7 +52,7 @@ describe('Headline component', () => {
         let wrapper;
         beforeEach(() => {
             //  wrapper = setUp() // !! whitout props
-            wrapper = shallow(<HeadLine />);
+            wrapper = shallow(<Sidebar />);
         })
         it('Should not render', () => {
             const component = findByAttr(wrapper, 'header-line');

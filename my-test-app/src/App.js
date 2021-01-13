@@ -4,7 +4,7 @@ import store from './store';
 
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
-import HeadLine from './components/headline/HeadLine';
+import Sidebar from './components/sidebar/Sidebar';
 import Posts from './components/post/Posts';
 import './App.css';
 
@@ -17,7 +17,7 @@ class App extends React.Component {
         <div className="App">
           <Header />
           <section className="main">
-            <HeadLine header="Title" description="Content description" />
+            <Sidebar header="NIKE AIR MAX 270 GS" price="299.00" />
             <Posts />
           </section>
           <Footer />
