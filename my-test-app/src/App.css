@@ -1,3 +1,6 @@
+
+@import '../src/styles/common.scss';
+
 .App {
   text-align: center;
   font-family: 'Nerko One', cursive;
@@ -32,7 +35,10 @@ body{
   margin: 0 auto;
   margin-bottom: 12px;
 }
-.app-footer{
+.header-text{
+  color:gray;
+}
+/* .app-footer{
   width: 100%;
   max-width: 1024px;
   margin: 0 auto;
@@ -41,7 +47,7 @@ body{
   margin-top: 12px;
   padding: 35px 0;
   font-size: 22px;
-}
+} */
 .main{
   width: 100%;
   max-width: 1024px;
@@ -130,11 +136,5 @@ font-weight: 100;
   font-size: 14px;
   color:#3f3f59;
 }
-button{
-  background-color: #f3fcfe;
-  border: 1px solid gainsboro;
-  border-radius: 8px;
-  padding: 6px 12px ;
-  color:#3f3f59;
-  font-weight:bold;
-}
+
+
